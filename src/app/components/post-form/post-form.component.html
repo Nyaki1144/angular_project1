@@ -1,0 +1,6 @@
+<form class="form" action="">
+    <h4>Create new post</h4>
+    <input class="input"  type="text" name="name" [(ngModel)]="title" placeholder="Name">
+    <input class="input" type="text" name="body" [(ngModel)]="body" placeholder="Description">
+    <button class="btn" (click)="createPost($event)" >Create</button>
+</form>
