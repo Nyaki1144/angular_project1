@@ -1,3 +1,15 @@
+:host{
+    margin: 5px;
+}
+
+.title{
+    margin: 10px
+}
+
+.create-btn{
+    margin: 10px;
+}
+
 .input {
     width: 100%;
     border: 1px solid  teal;
@@ -15,11 +27,9 @@
     margin: 15px;
 }
 
-.btn {
+.form-btn {
     margin-top: 15px;
-    align-self: flex-end;
-    padding: 10px;
-    background: none;
-    color: teal;
-    border: 1px solid teal;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }

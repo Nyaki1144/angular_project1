@@ -1,6 +1,14 @@
 @for (post of posts; track post.id) {
     <div class="post">
-      <div><strong>Name:</strong> {{post.title}}</div>
-      <div><strong>Description:</strong> {{post.body}}</div>
+      <div class="post-content">
+        <div><strong>Name:</strong> {{post.title}}</div>
+        <div><strong>Description:</strong> {{post.body}}</div>
+      </div>
+
+      <app-my-button (click)="deletePost(posts, post.id)">Delete</app-my-button>
     </div>
   }
+
+@if(posts.length === 0){
+  <h3 style="color: red;">Post list is empty</h3>
+}  
