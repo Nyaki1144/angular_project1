@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MyButtonComponent } from '../UI/my-button/my-button.component';
 import { IPost } from '../../../types/posts';
 
@@ -11,10 +11,15 @@ import { IPost } from '../../../types/posts';
   styleUrl: './post-lists.component.css'
 })
 export class PostListsComponent {
-  @Input() posts:any
+  @Input() filteredPosts: IPost[] = [] 
+  @Output() postsChanged = new EventEmitter<IPost[]>();
+
 
   deletePost(posts: IPost[], id: string){
     const index = posts.findIndex(el => el.id === id)
-    posts.splice(index, 1)
+    if (index !== -1) {
+      posts.splice(index, 1);
+      this.postsChanged.emit(posts);
+    }
   }
 }

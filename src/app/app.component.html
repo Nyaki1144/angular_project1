@@ -1,6 +1,18 @@
 <div class="app">
-    <app-post-form (onAdd)="onAdd($event)"></app-post-form>
-    <app-post-lists [posts]="posts"></app-post-lists>
+
+    <app-post-form  [posts]="posts" [filteredPosts]="filteredPosts" (onFilter)="onFilter($event)" (onAdd)="onAdd($event)"></app-post-form>
+    @if(isLoading){
+        <p class="loading">Loading ...</p>   
+    }
+    @else {
+        <app-post-lists [filteredPosts]="filteredPosts" (postsChanged)="updatePosts($event)"></app-post-lists>
+    }
+    <div class="paginations">
+        @for (item of pageCount; track $index) {
+            <app-my-button (click)="getPage($index)" class="pagination" [class.active]="pageNumber === $index+1">{{ $index + 1 }}</app-my-button>
+        }
+    </div>
+
 </div>
 
 

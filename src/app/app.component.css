@@ -1,2 +1,27 @@
 
 
+.loading {
+    font-size: 20px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 80px;
+    color: red;
+}
+
+.paginations {
+    display: flex;
+    justify-content: center;
+}
+
+.pagination{
+    margin: 3px;
+}
+
+.active {
+    background-color: black;
+}
+
+
+.active .btn {
+    color: rgb(255, 255, 255);
+}

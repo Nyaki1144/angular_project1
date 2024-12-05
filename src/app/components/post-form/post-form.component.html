@@ -1,5 +1,11 @@
 <h4 class="title">Posts page</h4>
-<app-my-button (click)="toggleModal()" class="create-btn">Create User</app-my-button>
+<div class="conteiner">
+    <app-my-button (click)="toggleModal()" class="create-btn">Create User</app-my-button>
+    <app-my-select [filteredPosts]="filteredPosts"></app-my-select>
+</div>
+<input class="search" placeholder="search by name" type="text" [(ngModel)]="search" (input)="setSearch()">
+
+
 @if(isOpen){
 <app-my-modal (click)="toggleModal()">
     <form (click)="$event.stopPropagation()" class="form" action="">
